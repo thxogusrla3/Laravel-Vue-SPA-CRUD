@@ -4,9 +4,9 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 ---
 ## Setting
 - os: Ubuntu 18.04
-- language: PHP, Vue.js
+- language: PHP
 - Database: Mysql, Redis
-- FrameWork: Laravel, PHPUnit
+- FrameWork: Laravel, Vue.js, PHPUnit
 - VSCODE
 
 ---
@@ -26,9 +26,9 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 - composer clear-cache
 
 #### 2. npm install 후 warn deprecated 
-- npm install webpack --save
-- npm audit fix --force
-- npm install
+  npm install webpack --save
+  npm audit fix --force
+  npm install
 
 #### 3. 새 데이터베이스 변경 시 오류
 - php artisan config:cache
