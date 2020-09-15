@@ -1,8 +1,8 @@
-## Laravel-Vue-SPA-CRUD
+# Laravel-Vue-SPA-CRUD
 Laravel과 vue를 사용한 SPA CRUD 입니다.
 
 ---
-## Setting
+# Setting
 - os: Ubuntu 18.04
 - language: PHP
 - Database: Mysql, Redis
@@ -10,20 +10,20 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 - VSCODE
 
 ---
-## Laravel & Vue Setting
-- composer create-project --prefer-dist laravel/laravel 이름
-- composer require laravel/ui
-- composer require predis/predis
-- php artisan ui vue
-- npm install
-- npm install vue-router vue-axios --save
-- npm run dev
-- npm run watch
+# Laravel & Vue Setting
+    composer create-project --prefer-dist laravel/laravel 이름
+    composer require laravel/ui
+    composer require predis/predis
+    php artisan ui vue
+    npm install
+    npm install vue-router vue-axios --save
+    npm run dev
+    npm run watch
 
 ---
-## 셋팅 오류
+# Setting Error
 #### 1. composer create-project 속도가 느릴 시
-- composer clear-cache
+    composer clear-cache
 
 #### 2. npm install 후 warn deprecated 
     npm install webpack --save
@@ -31,7 +31,7 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
     npm install
 
 #### 3. 새 데이터베이스 변경 시 오류
-- php artisan config:cache
+    php artisan config:cache
 
 ---
 ## TDD
