@@ -46,8 +46,10 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(
+        Request $request, 
+        $id
+    ){
         $book=Book::find($id);    
         $book->update($request->all());
 
