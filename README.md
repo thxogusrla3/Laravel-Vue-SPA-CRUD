@@ -10,12 +10,19 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 
 ## Laravel & Vue Setting
 -composer create-project --prefer-dist laravel/laravel 이름
+
 -composer require laravel/ui
+
 -composer require predis/predis
+
 -php artisan ui vue
+
 -npm install
+
 -npm install vue-router vue-axios --save
+
 -npm run dev
+
 -npm run watch
 
 ## 기타 오류
