@@ -3,7 +3,7 @@
         <div class="text-center" style="margin: 20px 0px 20px 0px;">
             <img src="http://skhu.ac.kr/common/images/kseek/main_banner.jpg"><br>
             <h3 class="text-secondary">Laravel & Vue CRUD SPA by kth</h3>
-            <a href=""><span class="text-secondary">my Git</span></a>
+            <a href="https://github.com/thxogusrla3/Laravel-Vue-SPA-CRUD" target="_blank"><span class="text-secondary">깃 주소</span></a>
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">

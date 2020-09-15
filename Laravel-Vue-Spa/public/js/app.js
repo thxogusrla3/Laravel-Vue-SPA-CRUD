@@ -37780,9 +37780,16 @@ var staticRenderFns = [
           _vm._v("Laravel & Vue CRUD SPA by kth")
         ]),
         _vm._v(" "),
-        _c("a", { attrs: { href: "" } }, [
-          _c("span", { staticClass: "text-secondary" }, [_vm._v("my Git")])
-        ])
+        _c(
+          "a",
+          {
+            attrs: {
+              href: "https://github.com/thxogusrla3/Laravel-Vue-SPA-CRUD",
+              target: "_blank"
+            }
+          },
+          [_c("span", { staticClass: "text-secondary" }, [_vm._v("깃 주소")])]
+        )
       ]
     )
   }
