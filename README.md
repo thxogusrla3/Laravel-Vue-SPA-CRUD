@@ -20,6 +20,6 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 
 ## 기타 오류
 1. composer create-project 속도가 느릴 시
-  composer clear-cache
+    composer clear-cache
 
 2. npm install 오류
