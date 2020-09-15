@@ -1,16 +1,25 @@
 ## Laravel-Vue-SPA-CRUD
 Laravel과 vue를 사용한 SPA CRUD 입니다.
 
-## 프로젝트 셋팅
-'''
-os = ubuntu 18.04
-사용 언어 = php, vue.js
-사용 툴  = Laravel
-데이터베이스 = Mysql, Redis
-테스트 도구 = phpunit
-'''
+## Setting
+-os: Ubuntu 18.04
+-language: PHP, Vue.js
+-Database: Mysql, Redis
+-FrameWork: Laravel, PHPUnit
+-VSCODE
 
-## 오류 해결
-'''
+## Laravel & Vue Setting
+-composer create-project --prefer-dist laravel/laravel 이름
+-composer require laravel/ui
+-composer require predis/predis
+-php artisan ui vue
+-npm install
+-npm install vue-router vue-axios --save
+-npm run dev
+-npm run watch
 
-'''
+## 기타 오류
+1. composer create-project 속도가 느릴 시
+  composer clear-cache
+
+2. npm install 오류
