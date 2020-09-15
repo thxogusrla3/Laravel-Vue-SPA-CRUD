@@ -25,7 +25,7 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 #### 1. composer create-project 속도가 느릴 시
     composer clear-cache
 
-#### 2. npm install 후 warn deprecated 
+#### 2. npm install 후 warn deprecated 발생
     npm install webpack --save
     npm audit fix --force
     npm install
