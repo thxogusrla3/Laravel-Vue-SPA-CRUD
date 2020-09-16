@@ -137,29 +137,41 @@ NOSQL(비관계형 데이터베이스)의 종류 중 하나로 Key-Value 구조�
             'database' => 0,
             'read_write_timeout' => 60,
         ],
+        
+- Redis & Cache 설정
+
+        //config/cache.php
+        'default' => env('CACHE_DRIVER', 'redis'),
+        
+        //config/session.php
+        'driver' => env('SESSION_DRIVER', 'redis'),
+        
+        //.env
+        CACHE_DRIVER=redis
+        
 - Controller에 Redis 사용
 
-        public function index()
-        {
-            $redis = Redis::connection();
-            $books = Book::all();
-            Redis::set('books', $books);
+    public function index()
+    {
+        $redis = Redis::connection();
+        $books = Book::all();
+        Redis::set('books', $books);
 
-            $all_book = $redis->get('books');
-            return $all_book;
-        }
-        
-        public function add(Request $request)
-        {
-            $redis = Redis::connection();
-            $book = Book::create([
-                'name' => $request->input('name'),
-                'author' => $request->input('author')
-            ]);
+        $all_book = $redis->get('books');
+        return $all_book;
+    }
+    
+    public function add(Request $request)
+    {
+        $redis = Redis::connection();
+        $book = Book::create([
+            'name' => $request->input('name'),
+            'author' => $request->input('author')
+        ]);
 
-            $redis->append('books', $book);
-            return response()->json("add success");
-        }
+        $redis->append('books', $book);
+        return response()->json("add success");
+    }
         
 - redis-cli에서 Key-Value 확인
 
