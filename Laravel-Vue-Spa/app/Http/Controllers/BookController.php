@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
 
 class BookController extends Controller
@@ -15,11 +16,13 @@ class BookController extends Controller
      */
     public function index()
     {
-        $redis = Redis::connection();
-        $books = Book::all();
-        Redis::set('books', $books);
+        // $redis = Redis::connection();
+        $books = Book::all()->toArray();
 
-        $all_book = $redis->get('books');
+        Cache::put('books', $books);
+
+        $all_book = Cache::get('books');
+        
         return $all_book;
     }
 
