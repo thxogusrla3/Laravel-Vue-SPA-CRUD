@@ -1,5 +1,7 @@
 # Laravel-Vue-SPA-CRUD
-Laravel과 vue를 사용한 SPA CRUD 입니다.
+Laravel과 vue를 사용한 SPA CRUD 입니다.  
+
+제출자 김태현
 
 ---
 # Setting
@@ -149,7 +151,7 @@ NOSQL(비관계형 데이터베이스)의 종류 중 하나로 Key-Value 구조�
         //.env
         CACHE_DRIVER=redis
         
-- Controller에 Redis 사용
+- Controller에 Redis & Cache 사용 코드
 
         public function index()
         {
