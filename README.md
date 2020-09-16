@@ -151,27 +151,28 @@ NOSQL(비관계형 데이터베이스)의 종류 중 하나로 Key-Value 구조�
         
 - Controller에 Redis 사용
 
-    public function index()
-    {
-        $redis = Redis::connection();
-        $books = Book::all();
-        Redis::set('books', $books);
+        public function index()
+        {
+            $books = Book::all()->toArray();
+            
+            Cache::put('books', $books);
+            
+            $all_book = Cache::get('books');
+            
+            return $all_book;
+        }
 
-        $all_book = $redis->get('books');
-        return $all_book;
-    }
-    
-    public function add(Request $request)
-    {
-        $redis = Redis::connection();
-        $book = Book::create([
-            'name' => $request->input('name'),
-            'author' => $request->input('author')
-        ]);
+        public function add(Request $request)
+        {
+            $redis = Redis::connection();
+            $book = Book::create([
+                'name' => $request->input('name'),
+                'author' => $request->input('author')
+            ]);
 
-        $redis->append('books', $book);
-        return response()->json("add success");
-    }
+            $redis->append('books', $book);
+            return response()->json("add success");
+        }
         
 - redis-cli에서 Key-Value 확인
 
