@@ -31,11 +31,13 @@ class BookController extends Controller
      */
     public function add(Request $request)
     {
-        Book::create([
+        $redis = Redis::connection();
+        $book = Book::create([
             'name' => $request->input('name'),
             'author' => $request->input('author')
         ]);
-
+        
+        $redis->append('books', $book);
         return response()->json("add success");
     }
 
@@ -70,9 +72,9 @@ class BookController extends Controller
      */
     public function delete($id)
     {
-
         $book = Book::find($id);
         $book->delete();
+        Redis::set('books', $book);
         return response()->json("delete success");
     }
 
