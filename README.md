@@ -111,3 +111,4 @@ NOSQL(비관계형 데이터베이스)의 종류 중 하나로 Key-Value 구조�
 메모리에 데이터가 저장되기 때문에 빠른 Read와 Write 속도를 보장한다.
 데이터 형식으로는 String, Set, sorted Set, Hash, List 를 지원한다.
 ㅊ
+ㅇ
