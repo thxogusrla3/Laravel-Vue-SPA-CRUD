@@ -1,7 +1,19 @@
 # Laravel-Vue-SPA-CRUD
 Laravel과 vue를 사용한 SPA CRUD 입니다.  
 
-제출자 김태현
+제출자 김태현   
+깃 클론시  
+
+        git clone https://github.com/thxogusrla3/Laravel-Vue-SPA-CRUD.git
+        composer install
+        npm install
+        *npm install warn deprecated 발생시
+        - npm install webpack --save
+        - npm audit fix --force
+        - npm install
+        cp .env.example .env(.env DB 수정)
+        php artisan key:generate
+        (.env 설정 후) php artisan migrate
 
 ---
 # Setting
