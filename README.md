@@ -57,54 +57,55 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 ### 데이터베이스 셋팅 전 클라이언트가 게시글을 추가하는 경우를 테스트
 - Test code 작성
 
-    public function a_book_can_be_added()
-    {
-        $this->withoutExceptionHandling();
+        public function a_book_can_be_added()
+        {
+            $this->withoutExceptionHandling();
 
-        $this->post('/api/book/add',[
-            'name'=>'Test name',
-            'author'=>'test author',
+            $this->post('/api/book/add',[
+                'name'=>'Test name',
+                'author'=>'test author',
+                ]);
+
+            $this->assertDatabaseHas('books',[
+                'name' => 'Test name',
+                'author' => 'test author'
             ]);
-
-        $this->assertDatabaseHas('books',[
-            'name' => 'Test name',
-            'author' => 'test author'
-        ]);
-    }
+        }
     
 - 진행
 
-    vendor/bin/phpunit --filter a_book_can_be_added 
-    // 오류 name author 컬럼을 찾을 수 없음
-    
-    //create_books_table.php 이동
-    $table->string('name');
-    $table->string('author');
-    
-    php artisan migrate
-    
-    vendor/bin/phpunit --filter a_book_can_be_added 
-    // 오류 Post method의 경로를 찾을 수 없음.
-    
-    //api.php로 이동
-    Route::post('api/book/add', 'BookController@add); 추가
-    
-    vendor/bin/phpunit --filter a_book_can_be_added 
-    // 오류 Post method의 경로를 찾을 수 없음.
-    
-    //BookController.php 이동 코드 추가
-    public function add(Request $request)
-    {
-        Book::create([
-            'name' => $request->input('name'),
-            'author' => $request->input('author')
-        ]);
+        vendor/bin/phpunit --filter a_book_can_be_added 
+        // 오류 name author 컬럼을 찾을 수 없음
 
-        return response()->json("add success");
-    }
-    
-    vendor/bin/phpunit --filter a_book_can_be_added
-    // 성공(초록색 줄) 테스트 종료
+        //create_books_table.php 이동
+        $table->string('name');
+        $table->string('author');
+
+        php artisan migrate
+
+        vendor/bin/phpunit --filter a_book_can_be_added 
+        // 오류 Post method의 경로를 찾을 수 없음.
+
+        //api.php로 이동
+        Route::post('api/book/add', 'BookController@add); 추가
+
+        vendor/bin/phpunit --filter a_book_can_be_added 
+        // 오류 Post method의 경로를 찾을 수 없음.
+
+        //BookController.php 이동 코드 추가
+        
+        public function add(Request $request)
+        {
+            Book::create([
+                'name' => $request->input('name'),
+                'author' => $request->input('author')
+            ]);
+
+            return response()->json("add success");
+        }
+
+        vendor/bin/phpunit --filter a_book_can_be_added
+        // 성공(초록색 줄) 테스트 종료
 
 # Redis
 NOSQL(비관계형 데이터베이스)의 종류 중 하나로 Key-Value 구조로 데이터를 메모리에 저장하는 데이터 관리 시스템이다.
