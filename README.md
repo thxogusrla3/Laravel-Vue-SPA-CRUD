@@ -77,7 +77,7 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
         vendor/bin/phpunit --filter a_book_can_be_added 
         // 오류 name author 컬럼을 찾을 수 없음
 
-        //create_books_table.php 이동
+        //해결1. create_books_table.php 이동
         $table->string('name');
         $table->string('author');
 
@@ -86,13 +86,13 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
         vendor/bin/phpunit --filter a_book_can_be_added 
         // 오류 Post method의 경로를 찾을 수 없음.
 
-        //api.php로 이동
+        //해결2. api.php로 이동
         Route::post('api/book/add', 'BookController@add); 추가
 
         vendor/bin/phpunit --filter a_book_can_be_added 
         // 오류 Post method의 경로를 찾을 수 없음.
 
-        //BookController.php 이동 코드 추가
+        //해결3. BookController.php 이동 코드 추가
         
         public function add(Request $request)
         {
@@ -111,5 +111,3 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 NOSQL(비관계형 데이터베이스)의 종류 중 하나로 Key-Value 구조로 데이터를 메모리에 저장하는 데이터 관리 시스템이다.
 메모리에 데이터가 저장되기 때문에 빠른 Read와 Write 속도를 보장한다.
 데이터 형식으로는 String, Set, sorted Set, Hash, List 를 지원한다.
-ㅊ
-ㅇ
