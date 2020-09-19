@@ -68,7 +68,7 @@ Laravel과 vue를 사용한 SPA CRUD 입니다.
 ## Laravel Vue TDD 예시
 - Testing: vendor/bin/phpunit --filter 이름 
 
-#### 데이터베이스 셋팅 전 클라이언트가 게시글을 추가하는 경우를 테스트
+####  migrate 전 클라이언트가 게시글을 추가하는 경우를 테스트
 - Test code 작성
 
         public function a_book_can_be_added()
